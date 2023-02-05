@@ -43,7 +43,7 @@ def eval(model,device, eval_loader):
     model.eval()
     pred = []
     with torch.no_grad():
-      for batch_idx, (data, _) in enumerate(train_loader):
+      for batch_idx, (data, _) in enumerate(eval_loader):
           data = data.squeeze().to(device)
 
           pred, _, _ = model(data)
